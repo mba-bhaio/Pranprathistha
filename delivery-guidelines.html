@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="gu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>મૂર્તિ ડિલિવરી - સેવા માર્ગદર્શિકા</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a237e;
+            --primary-light: #3949ab;
+            --accent: #5c6bc0;
+            --gold: #c5a028;
+            --bg-gradient-start: #ffffff;
+            --bg-gradient-end: #f5f7fa;
+            --card-bg: rgba(255, 255, 255, 0.98);
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --border-color: #e8eaf6;
+            --shadow: 0 10px 40px rgba(26, 35, 126, 0.08);
+            --shadow-hover: 0 20px 60px rgba(26, 35, 126, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Gujarati', sans-serif;
+            background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        /* Decorative Background */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 20%, rgba(92, 107, 192, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(26, 35, 126, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(197, 160, 40, 0.03) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .header-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 40px rgba(26, 35, 126, 0.15);
+            border: 4px solid white;
+            position: relative;
+        }
+
+        .header-image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .header-image-container::after {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 0.2;
+            }
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Section Card */
+        .section {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(26, 35, 126, 0.2);
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Guideline Items */
+        .guideline-list {
+            list-style: none;
+        }
+
+        .guideline-item {
+            display: flex;
+            gap: 15px;
+            padding: 18px 20px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+            border-radius: 16px;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .guideline-item:hover {
+            transform: translateX(8px);
+            background: linear-gradient(135deg, #f0f2ff 0%, #e8ebff 100%);
+            box-shadow: 0 4px 20px rgba(26, 35, 126, 0.08);
+        }
+
+        .guideline-icon {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .guideline-text {
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #92400e;
+        }
+
+        /* Delivery Sequence */
+        .sequence-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+            border-radius: 20px;
+            margin-top: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .sequence-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sequence-badge {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 8px 25px rgba(26, 35, 126, 0.25);
+            transition: transform 0.3s ease;
+        }
+
+        .sequence-badge:hover {
+            transform: scale(1.1);
+        }
+
+        .sequence-label {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-primary);
+            text-align: center;
+        }
+
+        .sequence-arrow {
+            font-size: 2rem;
+            color: var(--accent);
+            animation: bounce-right 1s ease-in-out infinite;
+        }
+
+        @keyframes bounce-right {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(8px);
+            }
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: linear-gradient(135deg, #fefce8, #fef9c3);
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            padding: 20px 25px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            margin-top: 15px;
+        }
+
+        .warning-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .warning-text {
+            font-size: 1rem;
+            color: #713f12;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .section:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .section:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px 15px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .section {
+                padding: 25px 20px;
+            }
+
+            .sequence-container {
+                gap: 15px;
+            }
+
+            .sequence-badge {
+                width: 65px;
+                height: 65px;
+                font-size: 26px;
+            }
+
+            .sequence-arrow {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-pattern"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-image-container">
+                <img src="0005134_51nw1-normal-white-simandhar-swami-51-murti-51nw1_440.jpeg"
+                    alt="Simandhar Swami Murti" class="header-image">
+            </div>
+            <h1>મૂર્તિ ડિલિવરી માર્ગદર્શિકા</h1>
+            <p class="subtitle">સેવા નિયમો અને સલામતી સૂચનાઓ</p>
+        </header>
+
+        <!-- General Guidelines Section -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">📋</div>
+                <h2 class="section-title">સામાન્ય સૂચનાઓ</h2>
+            </div>
+
+            <ul class="guideline-list">
+                <li class="guideline-item">
+                    <div class="guideline-icon">1</div>
+                    <p class="guideline-text">
+                        સેવા દરમ્યાન <span class="highlight">MBA ની Guidelines</span> પ્રમાણે આપણે વાણી, વર્તન, વ્યવહાર
+                        અને પહેરવેશનું ધ્યાન રાખીશું.
+                    </p>
+                </li>
+                <li class="guideline-item">
+                    <div class="guideline-icon">2</div>
+                    <p class="guideline-text">
+                        દરેક ભાઈઓએ સેવા દરમ્યાન <span class="highlight">I-Card પહેરવું ફરજીયાત</span> છે.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Safety Section -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">🛡️</div>
+                <h2 class="section-title">સલામતી સૂચનાઓ</h2>
+            </div>
+
+            <ul class="guideline-list">
+                <li class="guideline-item">
+                    <div class="guideline-icon">1</div>
+                    <p class="guideline-text">
+                        ટ્રકમાં <span class="highlight">Loading, Unloading અને Travelling</span> દરમ્યાન મૂર્તિ અને
+                        ભાઈઓની સેફ્ટીનું ખાસ ધ્યાન રાખવું.
+                    </p>
+                </li>
+                <li class="guideline-item">
+                    <div class="guideline-icon">2</div>
+                    <p class="guideline-text">
+                        મૂર્તિ નીચે મુકતી વખતે <span class="highlight">ચોરસાનો પ્રયોગ</span> કરવો.
+                    </p>
+                </li>
+                <li class="guideline-item">
+                    <div class="guideline-icon">3</div>
+                    <p class="guideline-text">
+                        મૂર્તિ અને સેવાર્થી ભાઈઓની સેફટી જળવાઈ રહે તે હેતુથી કોઈ પણ <span class="highlight">બાળકો,
+                            મહાત્મા અને સેવાર્થી કાર્ડ વગરના ભાઈઓને</span> મૂર્તિને હાથ ના લગાડે તે ધ્યાન રાખવું.
+                    </p>
+                </li>
+            </ul>
+
+            <div class="warning-box">
+                <span class="warning-icon">⚠️</span>
+                <p class="warning-text">
+                    મહાત્માના બંગલાના Gate / Floor ની Lift સુધી જ્યાં સુધી <strong>Music Team</strong> અને <strong>સંકુલ
+                        ભાઈઓ</strong> ના આવે ત્યાં સુધી ડિલિવરી કરવી નહીં.
+                </p>
+            </div>
+        </section>
+
+        <!-- Delivery Sequence Section -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">🔄</div>
+                <h2 class="section-title">ડિલિવરી ક્રમ</h2>
+            </div>
+
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 20px; font-size: 1.05rem;">
+                કોઈ પણ મહાત્માના ઘરે ડિલિવરી માટે નીચેની Sequence Follow કરશું:
+            </p>
+
+            <div class="sequence-container">
+                <div class="sequence-step">
+                    <div class="sequence-badge">🎵</div>
+                    <span class="sequence-label">Music Team</span>
+                </div>
+                <span class="sequence-arrow">➔</span>
+                <div class="sequence-step">
+                    <div class="sequence-badge">👥</div>
+                    <span class="sequence-label">સંકુલ ભાઈઓ</span>
+                </div>
+                <span class="sequence-arrow">➔</span>
+                <div class="sequence-step">
+                    <div class="sequence-badge">🚚</div>
+                    <span class="sequence-label">Delivery Team</span>
+                </div>
+            </div>
+
+            <ul class="guideline-list" style="margin-top: 25px;">
+                <li class="guideline-item">
+                    <div class="guideline-icon">✓</div>
+                    <p class="guideline-text">
+                        ભગવાનની સ્થાપના થઈ ગયા પછી <span class="highlight">Delivery Team</span> Next ભગવાન લેવા માટે
+                        નીકળી જશે.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-logo">🙏</div>
+            <p>જય સચ્ચિદાનંદ</p>
+        </footer>
+    </div>
+</body>
+
+</html>

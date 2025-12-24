@@ -125,6 +125,35 @@
             font-weight: 500;
         }
 
+        /* Vision Statement */
+        .vision-banner {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 25px 35px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(197, 160, 40, 0.2);
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        .vision-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.6;
+        }
+
+        .vision-text .highlight-gold {
+            display: block;
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, #b8860b, #daa520);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-top: 5px;
+        }
+
         /* Section Card */
         .section {
             background: var(--card-bg);
@@ -305,6 +334,88 @@
             font-weight: 500;
         }
 
+        /* Team Leaders Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .team-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(26, 35, 126, 0.1);
+        }
+
+        .team-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .team-name::before {
+            content: '👥';
+            font-size: 1.3rem;
+        }
+
+        .team-member {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .team-member:last-child {
+            border-bottom: none;
+        }
+
+        .member-name {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .member-position {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .position-tl {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            color: #92400e;
+        }
+
+        .position-dl {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            color: #1e40af;
+        }
+
+        .position-as {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            color: #065f46;
+        }
+
+        .position-ml {
+            background: linear-gradient(135deg, #fce7f3, #fbcfe8);
+            color: #9d174d;
+        }
+
         /* Footer */
         .footer {
             text-align: center;
@@ -395,6 +506,14 @@
     <div class="bg-pattern"></div>
 
     <div class="container">
+        <!-- Vision Statement -->
+        <div class="vision-banner">
+            <p class="vision-text">
+                મહાત્માના ઘરે
+                <span class="highlight-gold">ભવ્ય થી ભવ્ય સ્થાપના</span>
+            </p>
+        </div>
+
         <!-- Header -->
         <header class="header">
             <div class="header-image-container">
@@ -505,6 +624,151 @@
                     </p>
                 </li>
             </ul>
+        </section>
+
+        <!-- Team Leaders Section -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">👨‍💼</div>
+                <h2 class="section-title">ટીમ લીડર્સ</h2>
+            </div>
+
+            <div class="team-grid">
+                <!-- Agni Team -->
+                <div class="team-card">
+                    <div class="team-name">Agni (DNCC)</div>
+                    <div class="team-member">
+                        <span class="member-name">Dipesh Rathod</span>
+                        <span class="member-position position-tl">TL</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Rang Raval</span>
+                        <span class="member-position position-dl">DL</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Prashit Multani</span>
+                        <span class="member-position position-dl">DL</span>
+                    </div>
+                </div>
+
+                <!-- Bheem Team -->
+                <div class="team-card">
+                    <div class="team-name">Bheem</div>
+                    <div class="team-member">
+                        <span class="member-name">Jigar Vyas</span>
+                        <span class="member-position position-tl">TL</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Bhumin Prajapati</span>
+                        <span class="member-position position-dl">DL</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Love Patel</span>
+                        <span class="member-position position-as">Akram Sarthi</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Mayur Vyas</span>
+                        <span class="member-position position-ml">ML</span>
+                    </div>
+                </div>
+
+                <!-- Garuda Team -->
+                <div class="team-card">
+                    <div class="team-name">Garuda</div>
+                    <div class="team-member">
+                        <span class="member-name">Shilp Vekaria</span>
+                        <span class="member-position position-tl">TL</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Rushi Thakkar</span>
+                        <span class="member-position position-dl">DL</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Ankit Sisodiya</span>
+                        <span class="member-position position-as">Akram Sarthi</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Dhaval Kandoliya</span>
+                        <span class="member-position position-ml">ML</span>
+                    </div>
+                </div>
+
+                <!-- Hanumanji Team -->
+                <div class="team-card">
+                    <div class="team-name">Hanumanji</div>
+                    <div class="team-member">
+                        <span class="member-name">Parth Bhimani</span>
+                        <span class="member-position position-tl">TL</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Piyush Nandoliya</span>
+                        <span class="member-position position-dl">DL</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Darshan Patel</span>
+                        <span class="member-position position-as">Akram Sarthi</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Gaurav Suri</span>
+                        <span class="member-position position-ml">ML</span>
+                    </div>
+                </div>
+
+                <!-- Indra Team -->
+                <div class="team-card">
+                    <div class="team-name">Indra</div>
+                    <div class="team-member">
+                        <span class="member-name">Nilesh Kadivar</span>
+                        <span class="member-position position-tl">TL</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Jagdish Mevada</span>
+                        <span class="member-position position-dl">DL</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Jay Parikh</span>
+                        <span class="member-position position-as">Akram Sarthi</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Rohit Baheti</span>
+                        <span class="member-position position-ml">ML</span>
+                    </div>
+                </div>
+
+                <!-- Flash Team -->
+                <div class="team-card">
+                    <div class="team-name">Flash</div>
+                    <div class="team-member">
+                        <span class="member-name">Hardik Patel (Dr.)</span>
+                        <span class="member-position position-tl">TL</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Mehul Patel</span>
+                        <span class="member-position position-dl">DL</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Tushar Gohil</span>
+                        <span class="member-position position-as">Akram Sarthi</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Mayur Agravat</span>
+                        <span class="member-position position-ml">ML</span>
+                    </div>
+                </div>
+
+                <!-- SS Team -->
+                <div class="team-card">
+                    <div class="team-name">SS</div>
+                    <div class="team-member">
+                        <span class="member-name">Rushabh Shah</span>
+                        <span class="member-position position-tl">TL</span>
+                    </div>
+                    <div class="team-member">
+                        <span class="member-name">Dixit Chekhaliya</span>
+                        <span class="member-position position-dl"></span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Footer -->
